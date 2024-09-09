@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Age Calculator</title>
+    <style>
+      
+      body{
+        background-color: rgb(165, 248, 248);
+        width: 800px;
+        padding: 20px;
+        margin: 20px;
+        
+      }
+      .design{
+        width: 400px;
+        text-align: center;
+        margin-top: 200px;
+        border: 2px solid black;
+        border-radius:2px;
+        margin-left: 400px;
+        padding: 20px;
+      }
+      button{
+        background-color: rgb(248, 232, 9);
+        padding: 8px;
+        border: none;
+        border-radius: 10px;
+        font-weight: bold;
+
+      }
+      button:hover{
+        background-color: rgb(25, 0, 255);
+      }
+      input{
+        padding: 9px;
+        border-radius: 20px;
+        width: 200px;
+      }
+      
+    </style>
+</head>
+<body>
+  <div class="design">
+  <h2>Enter Your Birth Year</h2>
+  <input type="number" id="birthYear" placeholder="Birth Year"> <br><br>
+  <button onclick="calculateAge()">Calculate Age</button> 
+  <p id="result"></p>
+
+  <script>
+   function calculateAge() {
+      const birthYear = document.getElementById('birthYear').value;
+      const currentYear = new Date().getFullYear();
+      const age = currentYear - birthYear;
+      document.getElementById('result').innerText = `You are ${age} years old.`;
+   }
+  </script>
+  </div>
+</body>
+</html>
